@@ -1,7 +1,7 @@
 FROM crazymanjinn/archlinux-multilib:latest
 
 RUN pacman -S --noconfirm \
-        lsb_release \
+        lsb-release \
         pciutils \
         pulseaudio-alsa \
         steam && \
