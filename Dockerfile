@@ -10,6 +10,6 @@ RUN pacman -S --noconfirm \
     useradd -m user
     
 USER user
-ENV LD_LIBRARY_PATH "/usr/lib:/usr/lib32:/h1_63:/h1_32"
+ENV LD_LIBRARY_PATH "/usr/lib:/usr/lib32:/h1_64:/h1_32"
 
 ENTRYPOINT [ "steam" ]
