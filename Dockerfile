@@ -2,7 +2,9 @@ FROM crazymanjinn/archlinux-multilib:latest
 
 RUN pacman -S --noconfirm \
         lib32-libpulse \
+        lib32-nvidia-utils \
         lsb-release \
+        nvidia-utils \
         pciutils \
         pulseaudio-alsa \
         steam && \
@@ -10,6 +12,5 @@ RUN pacman -S --noconfirm \
     useradd -m user
     
 USER user
-ENV LD_LIBRARY_PATH "/usr/lib:/usr/lib32:/h1_64:/h1_32"
 
 ENTRYPOINT [ "steam" ]
