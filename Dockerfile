@@ -1,6 +1,7 @@
 FROM crazymanjinn/archlinux-multilib:latest
 
 RUN pacman -S --noconfirm \
+        lib32-libpulse \
         lsb-release \
         pciutils \
         pulseaudio-alsa \
