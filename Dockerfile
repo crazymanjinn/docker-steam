@@ -5,6 +5,7 @@ RUN pacman -S --noconfirm \
         pciutils \
         pulseaudio-alsa \
         steam && \
+    pacman -Scc --noconfirm && \
     useradd -m user
     
 USER user
