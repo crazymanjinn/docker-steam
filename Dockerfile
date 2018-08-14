@@ -20,7 +20,7 @@ RUN pacman -S --noconfirm \
         steam-native-runtime
 
 COPY --from=builder /home/builduser/linux-steam-integration/linux-steam-integration-*-x86_64.pkg.tar.xz /tmp/pkgs/
-COPY --from=crazymanjinn/su-exec:latest /home/builduser/su-exec/su-exec-*-x86_64.pkg.tar.xz /tmp/pkgs/
+COPY --from=crazymanjinn/su-exec:latest /tmp/pkgs/su-exec-*-x86_64.pkg.tar.xz /tmp/pkgs/
 RUN pacman -U --noconfirm /tmp/pkgs/*.pkg.tar.xz && \
     rm -rf /tmp/pkgs && \
     yes | pacman -Scc
