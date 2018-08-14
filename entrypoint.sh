@@ -11,6 +11,9 @@ if [[ ! -z ${CHOWN_DIRS+x} ]]; then
 fi
 
 if [[ "$USER_SPEC" != "0:0" ]]; then
+    groupadd -f -g ${USER_SPEC#*:} user
+    useradd -om -g ${USER_SPEC#*:} -u ${USER_SPEC%:*} user
+    export HOME=/home/user
     exec su-exec "$USER_SPEC" "$@"
 fi
 
