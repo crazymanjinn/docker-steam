@@ -22,7 +22,7 @@ RUN pacman -S --noconfirm \
 FROM crazymanjinn/archlinux:multilib
 
 COPY --from=builder /tmp/pkgs/*.pkg.tar.xz /tmp/pkgs/
-COPY --from=crazymannjinn/su-exec:latest /su-exec/* /tmp/pkgs/
+COPY --from=crazymanjinn/su-exec:latest /su-exec/* /tmp/pkgs/
 RUN pacman -U --noconfirm \
         /tmp/pkgs/*.pkg.tar.xz && \
     pacman -S --noconfirm \
