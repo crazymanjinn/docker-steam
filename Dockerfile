@@ -33,7 +33,7 @@ RUN pacman -U --noconfirm \
         pciutils \
         pulseaudio-alsa \
         steam \
-        steam-native-runtime
+        steam-native-runtime && \
     cp /tmp/pkgs/entrypoint.sh /usr/local/bin && \
     rm -rf /tmp/pkgs && \
     yes | pacman -Scc
